@@ -39,10 +39,10 @@ export const generatePrompt = (
 	maxLength: number,
 	type: CommitType,
 ) => [
-	'Generate a concise git commit message written in present tense for the following code diff with the given specifications below:',
+	'Generate a summarized git commit body written in present tense for the following code diff with the given specifications below:',
 	`Message language: ${locale}`,
 	`Commit message must be a maximum of ${maxLength} characters.`,
-	'Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit.',
+	'Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit body.',
 	commitTypes[type],
 	specifyCommitFormat(type),
 ].filter(Boolean).join('\n');
