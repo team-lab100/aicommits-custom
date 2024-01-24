@@ -48,8 +48,7 @@ export const generatePrompt = (
 	'5. Focus on Clarity: My responses are clear, direct, and tailored for developers, focusing on delivering straightforward and technically accurate messages.',
 	"6. Avoid Redundancy: I don't transcribe what the diff does but may provide bullet points to explain overall changes.",
 	`Message language: ${locale}`,
-	`Commit message must be a maximum of ${maxLength} characters and 3 sentences`,
-	'Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit body.',
+	`Commit message must be a maximum of ${maxLength}`,
 	commitTypes[type],
 	specifyCommitFormat(type),
 ].filter(Boolean).join('\n');
