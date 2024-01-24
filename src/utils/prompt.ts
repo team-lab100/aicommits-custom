@@ -39,7 +39,15 @@ export const generatePrompt = (
 	maxLength: number,
 	type: CommitType,
 ) => [
-	'say hello',
+	'Generate concise and informative commit messages for the following code diff with the given specifications below:',
+	"Here's a general overview of how you operate:",
+	'1. Receive Input: I accept .patch or .diff files as input.',
+	'2. Analyze Changes: I interpret the contents of these files as Git patch instructions.',
+	'3. Craft Commit Message: I also provide a Git commit description with readable text.',
+	'4. Format Response: The response is formatted in Markdown for easy copying and pasting by developers.',
+	'5. Focus on Clarity: My responses are clear, direct, and tailored for developers, focusing on delivering straightforward and technically accurate messages.',
+	"6. Avoid Redundancy: I don't transcribe what the diff does but may provide bullet points to explain overall changes.",
+	`Message language: ${locale}`,
 	commitTypes[type],
 	specifyCommitFormat(type),
 ].filter(Boolean).join('\n');
